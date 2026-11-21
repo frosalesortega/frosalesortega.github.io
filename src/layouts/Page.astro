@@ -1,0 +1,17 @@
+---
+import Base from './Base.astro';
+interface Props { title: string; description?: string; lede?: string | string[]; lang?: string }
+const { title, description, lede, lang } = Astro.props;
+const ledes = lede ? (Array.isArray(lede) ? lede : [lede]) : [];
+---
+<Base title={title} description={description ?? ledes[0]} lang={lang}>
+  <div class="wrap page">
+    <header class="page-head">
+      <slot name="before" />
+      <h1>{title}</h1>
+      {ledes.map((l) => <p class="lede">{l}</p>)}
+      <slot name="head" />
+    </header>
+    <slot />
+  </div>
+</Base>

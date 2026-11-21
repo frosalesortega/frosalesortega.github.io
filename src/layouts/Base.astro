@@ -1,0 +1,61 @@
+---
+import '@fontsource-variable/figtree/wght.css';
+import '../styles/global.css';
+import { getImage } from 'astro:assets';
+import portrait from '../assets/portrait.jpg';
+import { site } from '../lib/data';
+import { href } from '../lib/url';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;           // page title (omitted on home)
+  description?: string;
+  noindex?: boolean;
+  jsonLd?: Record<string, unknown>;
+  bodyClass?: string;
+  lang?: string;            // document language, default 'en'
+}
+const { title, description, noindex = false, jsonLd, bodyClass, lang = 'en' } = Astro.props;
+const ogLocale = lang === 'es' ? 'es_MX' : lang;
+const fullTitle = title ? `${title} · ${site.name}` : `${site.name}${site.tagline ? ' · ' + site.tagline : ''}`;
+const desc = description ?? site.description ?? '';
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const og = await getImage({ src: portrait, width: 590, format: 'jpeg' });
+const ogUrl = new URL(og.src, Astro.site).href;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    {desc && <meta name="description" content={desc} />}
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="icon" href={href('/favicon.svg')} type="image/svg+xml" />
+    <link rel="sitemap" href={href('/sitemap-index.xml')} />
+    <meta property="og:type" content={title ? 'article' : 'website'} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={fullTitle} />
+    {desc && <meta property="og:description" content={desc} />}
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogUrl} />
+    <meta property="og:locale" content={ogLocale} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={fullTitle} />
+    {desc && <meta name="twitter:description" content={desc} />}
+    <meta name="twitter:image" content={ogUrl} />
+    <meta name="theme-color" content="#0d1420" />
+    <script is:inline>document.documentElement.classList.add('js');</script>
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body class={bodyClass}>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <Header />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

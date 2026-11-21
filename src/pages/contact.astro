@@ -1,0 +1,20 @@
+---
+import Page from '../layouts/Page.astro';
+import ProfileLinks from '../components/ProfileLinks.astro';
+import { site } from '../lib/data';
+---
+<Page title="Contact" description={`Contact details for ${site.name}.`}>
+  <div class="prose">
+    {site.email && <p><a href={`mailto:${site.email}`}>{site.email}</a></p>}
+    {site.phone && <p>Telephone: <a href={`tel:${site.phone.replace(/\s*ext\.\s*(\d+)/i, ';ext=$1').replace(/[^\d+;=a-z]/gi, '')}`}>{site.phone}</a></p>}
+    {site.address.length > 0 && (
+      <address class="address">
+        {site.address.map((l, i) => <>{l}{i < site.address.length - 1 && <br />}</>)}
+      </address>
+    )}
+  </div>
+  <section class="section" aria-labelledby="h-profiles">
+    <h2 id="h-profiles">Profiles</h2>
+    <ProfileLinks />
+  </section>
+</Page>

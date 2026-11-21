@@ -1,0 +1,72 @@
+intro: "Además de mi investigación en astrofísica, analizo el presupuesto federal de ciencia, tecnología e innovación en México a partir de bases de datos públicas. Este trabajo es de divulgación y participación pública: es independiente de mi producción científica y no forma parte de mi lista de publicaciones."
+project:
+  title: "El presupuesto federal de ciencia, tecnología e innovación · México"
+  url: https://presupuesto-ciencia-mx.netlify.app/
+  description: "Tablero que presenta como serie continua la información presupuestaria federal en materia de ciencia, tecnología e innovación: el presupuesto aprobado de 2012 a 2027 y el efectivamente ejercido de 2015 a 2025. Su carácter es descriptivo: no evalúa programas ni atribuye responsabilidades. Desarrollado con Claude como asistente de programación; las preguntas, las fuentes de datos y la metodología son mías."
+method: "Montos reales en pesos de 2020, deflactados con el INPC promedio anual. Recursos fiscales salvo indicación en contrario. Las cifras de 2027 corresponden al proyecto de presupuesto (PPEF 2027). Fuentes: Transparencia Presupuestaria (Datos Abiertos), Cuenta Pública y Banco Mundial / UNESCO. Elaboración propia."
+resources:
+- title: "El presupuesto federal de ciencia, tecnología e innovación. México, 2012–2027"
+  description: "Reporte sobre el presupuesto federal aprobado de CTI (PDF)."
+  url: https://presupuesto-ciencia-mx.netlify.app/reportes/reporte_cti.pdf
+  type: "Reporte (PDF)"
+- title: "Del presupuesto aprobado al gasto ejercido. México, 2015–2025"
+  description: "Reporte que compara el presupuesto aprobado y el ejercido (PDF)."
+  url: https://presupuesto-ciencia-mx.netlify.app/reportes/reporte_ejercido.pdf
+  type: "Reporte (PDF)"
+- title: "Anexo de CTI"
+  description: "Series del presupuesto de CTI (cti.json)."
+  url: https://presupuesto-ciencia-mx.netlify.app/datos/cti.json
+  type: "Datos abiertos (JSON)"
+- title: "Ramo 38"
+  description: "Series presupuestarias del Ramo 38 (r38.json)."
+  url: https://presupuesto-ciencia-mx.netlify.app/datos/r38.json
+  type: "Datos abiertos (JSON)"
+- title: "Aprobado y ejercido"
+  description: "Presupuesto efectivamente ejercido (ejercido.json)."
+  url: https://presupuesto-ciencia-mx.netlify.app/datos/ejercido.json
+  type: "Datos abiertos (JSON)"
+- title: "Ampliaciones y reducciones"
+  description: "Ampliaciones y reducciones presupuestarias (adecuaciones.json)."
+  url: https://presupuesto-ciencia-mx.netlify.app/datos/adecuaciones.json
+  type: "Datos abiertos (JSON)"
+- title: "Centros públicos de investigación"
+  description: "Datos de los 24 centros públicos de investigación (centros.json)."
+  url: https://presupuesto-ciencia-mx.netlify.app/datos/centros.json
+  type: "Datos abiertos (JSON)"
+threads:
+- date: '2024-09-12'
+  title: "Ciencia, tecnología e innovación en el Sexto Informe de Gobierno"
+  url: https://x.com/FRosalesO/status/1834417575679111629
+  archiveUrl: https://threadreaderapp.com/thread/1834417575679111629.html
+- date: '2024-06-01'
+  title: "Ciencia, tecnología e innovación durante la administración federal 2018–2024"
+  url: https://x.com/FRosalesO/status/1796780110395183356
+  archiveUrl: https://threadreaderapp.com/thread/1796780110395183356.html
+- date: '2023-09-10'
+  title: "Análisis del PPEF 2024 para ciencia, tecnología e innovación"
+  url: https://twitter.com/FRosalesO/status/1701386051380723823
+  archiveUrl: https://threadreaderapp.com/thread/1701386051380723823.html
+- date: '2023-09-08'
+  title: "Ciencia, tecnología e innovación en el Quinto Informe de Gobierno"
+  url: https://twitter.com/FRosalesO/status/1699942164657213612
+- date: '2022-09-09'
+  title: "Análisis del PPEF 2023 para ciencia, tecnología e innovación"
+  url: https://twitter.com/FRosalesO/status/1568342708154138624
+- date: '2021-09-14'
+  title: "Ciencia y tecnología en el Tercer Informe de Gobierno"
+  url: https://twitter.com/FRosalesO/status/1437976958533570561
+- date: '2021-09-09'
+  title: "Análisis del PPEF 2022 para ciencia, tecnología e innovación"
+  url: https://twitter.com/FRosalesO/status/1436145111302164481
+  note: "Incluye una continuación sobre el presupuesto del Conacyt (27 de septiembre de 2021)."
+disclaimer: "Las cifras presentadas provienen del procesamiento de bases de datos públicas del Gobierno Federal y se elaboraron de buena fe, con el único propósito de informar a la comunidad. No constituyen una cifra oficial ni sustituyen la información que compete emitir a la autoridad competente."
+# Gráficas: archivos PNG en src/assets/policy/, en este orden. El pie de cada gráfica también es su texto alternativo.
+gallery:
+  - { file: 01-presupuesto-cti.png, caption: "Presupuesto de ciencia, tecnología e innovación, 2012–2027. Recursos fiscales, en miles de millones de pesos de 2020." }
+  - { file: 02-serie-publicada-y-comparable.png, caption: "Presupuesto de CTI, 2012–2027: serie publicada y serie comparable." }
+  - { file: 03-participacion-por-ramo.png, caption: "Participación de cada ramo en el presupuesto de CTI, 2012–2027." }
+  - { file: 04-cti-porcentaje-pef.png, caption: "Presupuesto de CTI como porcentaje del Presupuesto de Egresos de la Federación, 2012–2027." }
+  - { file: 05-ramo-38-porcentaje-pef.png, caption: "Ramo 38 (Conacyt, Conahcyt, Secihti) como porcentaje del Presupuesto de Egresos de la Federación, 2012–2027." }
+  - { file: 06-ramo-38-programas.png, caption: "Ramo 38: becas de posgrado, SNII y centros públicos de investigación, en miles de millones de pesos de 2020." }
+  - { file: 07-aprobado-y-ejercido.png, caption: "Presupuesto de CTI aprobado y ejercido, en miles de millones de pesos de 2020." }
+  - { file: 08-inversion-id-america-latina.png, caption: "Gasto en investigación y desarrollo como porcentaje del PIB en países de América Latina. Datos de Banco Mundial / UNESCO." }

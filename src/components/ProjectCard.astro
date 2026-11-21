@@ -1,0 +1,20 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import { projectImage } from '../lib/images';
+import { href } from '../lib/url';
+interface Props { project: CollectionEntry<'projects'>; meta?: boolean; sizes?: string }
+const { project, meta = false, sizes = '(min-width: 1024px) 245px, (min-width: 640px) 45vw, 92vw' } = Astro.props;
+const d = project.data;
+const img = projectImage(project.id, d.image);
+---
+<li class="card">
+  <div class:list={['card-media', { 'is-contain': d.imageFit === 'contain' }]}>
+    {img
+      ? <Image src={img} alt={d.imageAlt ?? `${d.acronym} — image`} width={Math.min(720, img.width)} widths={[360, 540, 720, 1080].filter((w) => w <= img.width)} sizes={sizes} loading="lazy" decoding="async" />
+      : <span class:list={['card-acr', { 'is-long': d.acronym.length > 8 }]} aria-hidden="true">{d.acronym}</span>}
+  </div>
+  <h3><a href={href(`/research/${project.id}/`)}>{d.acronym}</a></h3>
+  <p>{d.blurb ?? d.summary}</p>
+  {meta && <p class="card-meta">{d.role} · {d.period}</p>}
+</li>

@@ -1,0 +1,9 @@
+---
+import { site } from '../lib/data';
+import { buildDate } from '../lib/dates';
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© {new Date().getUTCFullYear()} {site.name} · Not an official INAOE page · Last updated {buildDate()}</p>
+  </div>
+</footer>

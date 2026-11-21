@@ -1,0 +1,15 @@
+---
+import { cv, profileUrl } from '../lib/data';
+const m = cv.metrics ?? {};
+const cites = m.citations !== undefined ? String(m.citations).replace(/\+$/, '') : '';
+const scholar = profileUrl('scholar');
+const scix = profileUrl('scix');
+---
+<p class="pub-metrics">
+  {m.total !== undefined && <>{m.total} publications in total; </>}
+  {m.refereed !== undefined && <>{m.refereed} refereed articles{m.firstAuthorRefereed !== undefined && <> ({m.firstAuthorRefereed} as first author)</>}; </>}
+  {cites && <>over {cites} citations; </>}
+  {m.hIndex !== undefined && <><i>h</i>-index = {m.hIndex}</>}
+  {(m.source || m.asOf) && <> ({scholar && m.source === 'Google Scholar' ? <a href={scholar} rel="noopener">{m.source}</a> : m.source}{m.source && m.asOf ? ', ' : ''}{m.asOf})</>}.
+  {scix && <> Full list: <a href={scix} rel="noopener">NASA-SciX library</a>.</>}
+</p>

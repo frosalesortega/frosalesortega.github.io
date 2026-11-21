@@ -1,0 +1,17 @@
+---
+# TEMPLATE for a news entry. Copy this file to src/content/news/YYYY-MM-DD-short-slug.md
+# (remove the .txt extension; the file name is free, the date inside the file is what counts).
+date: 2026-11-16            # Required. YYYY-MM-DD. If only the month is known use the 1st of the month; if only the year, YYYY-01-01.
+datePrecision: day          # Optional. day (default) | month | year. Controls how the date is displayed.
+title: "Short title in English"    # Required.
+category: Talk              # Required. One of: Talk, Interview, Media, Publication, Outreach, Science Policy, Institutional, Award, Conference
+summary: "One factual sentence describing the item."   # Required.
+venue: "Event, journal, programme or outlet"           # Optional.
+url: "https://example.org/page"                        # Optional. External link (video, article, paper, thread).
+image: "../../assets/news/example.jpg"                 # Optional. Image path (not used unless supplied).
+imageAlt: "Description of the image"                   # Optional. Required if image is set.
+related: "betis"            # Optional. A project slug (e.g. betis, desired) or a publications.bib key.
+tags: [BETIS, Talk]         # Optional. Free tags.
+lang: es                    # Optional. Language of the linked item (en by default; es for Spanish).
+---
+Optional body in Markdown. Most entries need no body.

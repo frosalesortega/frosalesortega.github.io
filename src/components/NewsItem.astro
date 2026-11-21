@@ -1,0 +1,22 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import { formatDatePrecise, isoDate } from '../lib/dates';
+import { newsImage } from '../lib/images';
+interface Props { entry: CollectionEntry<'news'> }
+const { entry } = Astro.props;
+const d = entry.data;
+const img = newsImage(entry.id, d.image);
+---
+<article class="news-item" data-news data-category={d.category} data-year={d.date.getUTCFullYear()} lang={d.lang}>
+  {img && (
+    <figure class="news-thumb">
+      <Image src={img} alt={d.imageAlt ?? ''} width={Math.min(240, img.width)} widths={[120, 240].filter((w) => w <= img.width)} sizes="120px" loading="lazy" decoding="async" />
+    </figure>
+  )}
+  <div>
+    <p class="news-meta"><time datetime={isoDate(d.date)}>{formatDatePrecise(d.date, d.datePrecision)}</time> · {d.category}</p>
+    <h3 class="news-title">{d.url ? <a href={d.url} rel="noopener">{d.title}</a> : d.title}</h3>
+    <p class="news-line">{d.venue ?? d.summary}</p>
+  </div>
+</article>

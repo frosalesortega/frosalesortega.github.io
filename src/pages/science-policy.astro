@@ -1,0 +1,85 @@
+---
+import { Image, getImage } from 'astro:assets';
+import Page from '../layouts/Page.astro';
+import { policy } from '../lib/data';
+import { policyImages } from '../lib/images';
+import { markToComplete } from '../lib/html';
+import { formatLooseDateEs } from '../lib/dates';
+
+const files = policyImages();
+const listed = policy.gallery
+  .map((g) => ({ g, hit: files.find((f) => f.file === g.file) }))
+  .filter((x): x is { g: typeof x.g; hit: NonNullable<typeof x.hit> } => !!x.hit)
+  .map((x) => ({ file: x.g.file, asset: x.hit.asset, caption: x.g.caption }));
+const gallery = await Promise.all(
+  [...listed, ...files.filter((f) => !listed.some((l) => l.file === f.file)).map((f) => ({ ...f, caption: undefined as string | undefined }))]
+    .map(async (g) => ({ ...g, full: (await getImage({ src: g.asset, width: Math.min(1920, g.asset.width) })).src })),
+);
+---
+<Page title="Política científica y presupuesto de ciencia" lang="es" description="Presupuesto federal de ciencia, tecnología e innovación en México: tablero, reportes, datos abiertos y gráficas elaboradas por Fabián Rosales-Ortega.">
+  <p slot="head" class="lang-note" lang="en">This page is in Spanish. It covers my public work on science funding in Mexico, which is separate from my astrophysics research.</p>
+  {policy.intro && <p class="prose">{policy.intro}</p>}
+
+  {policy.project && (
+    <section class="section" aria-labelledby="h-project">
+      <h2 id="h-project">Proyecto</h2>
+      <h3><a href={policy.project.url} rel="noopener">{policy.project.title}</a></h3>
+      {policy.project.description && <p class="prose" set:html={markToComplete(policy.project.description)} />}
+    </section>
+  )}
+
+  {gallery.length > 0 && (
+    <section class="section" aria-labelledby="h-gallery">
+      <h2 id="h-gallery">Gráficas</h2>
+      <ul class="gallery">
+        {gallery.map((g) => (
+          <li>
+            <figure>
+              <a href={g.full}>
+                <Image src={g.asset} alt={g.caption ?? ''} width={480} widths={[480, 960, 1920].filter((w) => w <= g.asset.width)} sizes="(min-width: 720px) 480px, 92vw" loading="lazy" decoding="async" />
+              </a>
+              {g.caption && <figcaption>{g.caption}</figcaption>}
+            </figure>
+          </li>
+        ))}
+      </ul>
+      {policy.method && <p class="gallery-method">{policy.method}</p>}
+    </section>
+  )}
+
+  {policy.resources.length > 0 && (
+    <section class="section" aria-labelledby="h-res">
+      <h2 id="h-res">Reportes y datos</h2>
+      <ul class="link-list">
+        {policy.resources.map((r) => (
+          <li><a href={r.url} rel="noopener">{r.title}</a>{r.type && <span class="muted"> · {r.type}</span>}</li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {policy.threads.length > 0 && (
+    <section class="section" aria-labelledby="h-threads">
+      <h2 id="h-threads">Hilos en X</h2>
+      <ul class="row-list">
+        {policy.threads.map((t) => (
+          <li>
+            <span class="row-date">{formatLooseDateEs(t.date)}</span>
+            <span>
+              <a href={t.url} rel="noopener">{t.title}</a>
+              {t.archiveUrl && <span class="muted"> · <a href={t.archiveUrl} rel="noopener">copia archivada</a></span>}
+              {t.note && <span class="muted"> · {t.note}</span>}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {policy.disclaimer && (
+    <section class="section" aria-labelledby="h-aviso">
+      <h2 id="h-aviso">Aviso</h2>
+      <p class="sub-note">{policy.disclaimer}</p>
+    </section>
+  )}
+</Page>

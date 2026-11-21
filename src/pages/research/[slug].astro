@@ -1,0 +1,108 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import PublicationItem from '../../components/PublicationItem.astro';
+import { publications } from '../../lib/data';
+import { getNews, getProjects, getSoftware } from '../../lib/content';
+import { projectImage } from '../../lib/images';
+import { href } from '../../lib/url';
+import { formatDatePrecise, isoDate } from '../../lib/dates';
+
+export async function getStaticPaths() {
+  const projects = await getProjects();
+  return projects.map((p) => ({ params: { slug: p.id }, props: { project: p } }));
+}
+interface Props { project: CollectionEntry<'projects'> }
+const { project } = Astro.props;
+const d = project.data;
+const { Content } = await render(project);
+const img = projectImage(project.id, d.image);
+
+const keys = new Set(d.bibkeys ?? []);
+const acr = d.acronym.toLowerCase();
+const related = publications.filter((p) => keys.has(p.key) || p.tags.some((t) => t.toLowerCase() === acr));
+const news = (await getNews()).filter((n) => n.data.related === project.id || n.data.related === d.acronym);
+const software = (await getSoftware()).filter((s) => s.data.project === project.id);
+const press = [...(d.press ?? [])].sort((a, b) => b.date.getTime() - a.date.getTime());
+const hasBody = !!project.body?.trim();
+const status = d.status.charAt(0).toUpperCase() + d.status.slice(1);
+const facts: [string, string][] = [
+  ['Role', d.role], ['Period', d.period], ['Status', status],
+  ...(d.pi ? [['PI', d.pi] as [string, string]] : []),
+  ...(d.institutions.length ? [['Institutions', d.institutions.join('; ')] as [string, string]] : []),
+  ...(d.funding ? [['Funding', d.funding] as [string, string]] : []),
+];
+---
+<Base title={d.acronym} description={d.summary}>
+  <div class="wrap page">
+    <a class="back" href={href('/research/')}>Research</a>
+    {img && (
+      <figure class:list={['banner', { 'is-contain': d.imageFit === 'contain' }]}>
+        <Image src={img} alt={d.imageAlt ?? `${d.acronym} — image`} width={Math.min(1040, img.width)} widths={[720, 1040, 1600].filter((w) => w <= img.width)} sizes="(min-width: 1072px) 1040px, 100vw" loading="eager" decoding="async" />
+        {d.imageCredit && <figcaption class="credit">{d.imageCredit}</figcaption>}
+      </figure>
+    )}
+    <header class="page-head">
+      <h1>{d.acronym}</h1>
+      {d.fullName && d.fullName !== d.acronym && <p class="fullname">{d.fullName}</p>}
+    </header>
+
+    <dl class="facts">
+      {facts.map(([k, v]) => <><dt>{k}</dt><dd>{v}</dd></>)}
+    </dl>
+
+    {hasBody && <div class="prose section"><Content /></div>}
+
+    {d.links.length > 0 && (
+      <section class="section" aria-labelledby="h-links">
+        <h2 id="h-links">Links</h2>
+        <ul class="link-list">
+          {d.links.map((l) => <li><a href={l.url} rel="noopener">{l.label}</a></li>)}
+        </ul>
+      </section>
+    )}
+
+    {software.length > 0 && (
+      <section class="section" aria-labelledby="h-sw">
+        <h2 id="h-sw">Software and data</h2>
+        <ul class="link-list">
+          {software.map((s) => <li><a href={href('/research/software/#' + s.id)}>{s.data.name}</a> — {s.data.summary}</li>)}
+        </ul>
+      </section>
+    )}
+
+    {related.length > 0 && (
+      <section class="section" aria-labelledby="h-pubs">
+        <h2 id="h-pubs">Publications</h2>
+        <ul class="pub-list">{related.map((p) => <li><PublicationItem pub={p} flag={false} /></li>)}</ul>
+      </section>
+    )}
+
+    {press.length > 0 && (
+      <section class="section" aria-labelledby="h-press">
+        <h2 id="h-press">Press coverage</h2>
+        <ul class="press-list">
+          {press.map((x) => (
+            <li>
+              <time class="row-date" datetime={isoDate(x.date)}>{formatDatePrecise(x.date, x.datePrecision)}</time> — {x.outlet}: <a href={x.url} rel="noopener" lang={x.lang}>{x.title}</a>{x.lang === 'es' && <span class="muted"> (in Spanish)</span>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {news.length > 0 && (
+      <section class="section" aria-labelledby="h-news">
+        <h2 id="h-news">News</h2>
+        <ul class="press-list">
+          {news.map((n) => (
+            <li>
+              <time class="row-date" datetime={isoDate(n.data.date)}>{formatDatePrecise(n.data.date, n.data.datePrecision)}</time> — {n.data.url ? <a href={n.data.url} rel="noopener" lang={n.data.lang}>{n.data.title}</a> : n.data.title}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </div>
+</Base>

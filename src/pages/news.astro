@@ -1,0 +1,76 @@
+---
+import Page from '../layouts/Page.astro';
+import NewsItem from '../components/NewsItem.astro';
+import { site } from '../lib/data';
+import { getNews } from '../lib/content';
+import { NEWS_CATEGORIES } from '../content.config';
+
+const news = await getNews();
+const years = [...new Set(news.map((n) => n.data.date.getUTCFullYear()))].sort((a, b) => b - a);
+const byYear = years.map((y) => ({ year: y, items: news.filter((n) => n.data.date.getUTCFullYear() === y) }));
+const cats = NEWS_CATEGORIES.filter((c) => news.some((n) => n.data.category === c));
+---
+<Page title="News" description={`News, talks and media appearances of ${site.name}.`}>
+  <div class="tools" data-tools>
+    <ul class="chips" aria-label="Filter by category">
+      <li><button type="button" class="chip" data-cat="all" aria-pressed="true">All ({news.length})</button></li>
+      {cats.map((c) => <li><button type="button" class="chip" data-cat={c} aria-pressed="false">{c} ({news.filter((n) => n.data.category === c).length})</button></li>)}
+    </ul>
+    {years.length > 1 && (
+      <p style="margin: 0.5rem 0 0">
+        <label for="news-year" class="muted" style="font-size: 0.95rem">Year </label>
+        <select id="news-year" data-year>
+          <option value="all">All years</option>
+          {years.map((y) => <option value={String(y)}>{y}</option>)}
+        </select>
+      </p>
+    )}
+    <p class="count-line" role="status" aria-live="polite" data-count style="margin-top: 0.5rem"></p>
+  </div>
+
+  <div data-news-root>
+    {byYear.map(({ year, items }) => (
+      <section class="news-year" data-year-group aria-labelledby={`n-${year}`}>
+        <h2 id={`n-${year}`}>{year}</h2>
+        <ul class="news-list">
+          {items.map((n) => <li><NewsItem entry={n} /></li>)}
+        </ul>
+      </section>
+    ))}
+  </div>
+  <p class="empty-note" data-empty hidden>No items match the current filters.</p>
+  {news.length === 0 && <p class="empty-note">No news items yet.</p>}
+</Page>
+
+<script>
+  const tools = document.querySelector<HTMLElement>('[data-tools]');
+  const root = document.querySelector<HTMLElement>('[data-news-root]');
+  if (tools && root) {
+    const items = [...root.querySelectorAll<HTMLElement>('[data-news]')];
+    const groups = [...root.querySelectorAll<HTMLElement>('[data-year-group]')];
+    const chips = [...tools.querySelectorAll<HTMLButtonElement>('[data-cat]')];
+    const yearSel = tools.querySelector<HTMLSelectElement>('[data-year]');
+    const count = tools.querySelector<HTMLElement>('[data-count]')!;
+    const empty = document.querySelector<HTMLElement>('[data-empty]')!;
+    let cat = 'all';
+    const apply = () => {
+      const yr = yearSel?.value ?? 'all';
+      let shown = 0;
+      items.forEach((el) => {
+        const ok = (cat === 'all' || el.dataset.category === cat) && (yr === 'all' || el.dataset.year === yr);
+        (el.closest('li') as HTMLElement).hidden = !ok;
+        if (ok) shown++;
+      });
+      groups.forEach((g) => { g.hidden = !g.querySelector('li:not([hidden])'); });
+      empty.hidden = shown !== 0;
+      count.textContent = shown === items.length ? '' : `${shown} of ${items.length} items shown`;
+    };
+    chips.forEach((c) => c.addEventListener('click', () => {
+      cat = c.dataset.cat ?? 'all';
+      chips.forEach((x) => x.setAttribute('aria-pressed', String(x === c)));
+      apply();
+    }));
+    yearSel?.addEventListener('change', apply);
+    apply();
+  }
+</script>

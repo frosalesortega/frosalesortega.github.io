@@ -1,0 +1,29 @@
+---
+import { pubId, type PubView } from '../lib/data';
+interface Props { pub: PubView; showTags?: boolean; flag?: boolean }
+const { pub, showTags = true, flag = true } = Astro.props;
+const doiUrl = pub.doi ? `https://doi.org/${pub.doi}` : undefined;
+---
+<article
+  class="pub"
+  data-pub
+  id={pubId(pub.key)}
+  data-year={pub.year}
+  data-selected={pub.selected ? '1' : '0'}
+  data-first={pub.firstAuthor ? '1' : '0'}
+  data-type={pub.type === 'article' ? 'article' : 'proceedings'}
+  data-tags={pub.tags.join('|')}
+  data-search={`${pub.title} ${pub.authorsText} ${pub.venue} ${pub.year} ${pub.tags.join(' ')}`.toLowerCase()}
+>
+  <h3 class="pub-title">{flag && pub.selected && <><span class="pub-star" aria-hidden="true">★</span><span class="sr-only">Selected publication: </span></>}{pub.title}</h3>
+  <p class="pub-authors" set:html={pub.authorsHtml} />
+  <p class="pub-venue">
+    {pub.venue || 'TO COMPLETE'}{pub.note && <span class="pub-note"> ({pub.note})</span>}
+  </p>
+  <ul class="pub-links" aria-label="Links for this publication">
+    {doiUrl && <li><a href={doiUrl} rel="noopener">DOI</a></li>}
+    {pub.scix && <li><a href={pub.scix} rel="noopener">SciX</a></li>}
+    {pub.arxiv && <li><a href={pub.arxiv} rel="noopener">arXiv</a></li>}
+    {showTags && pub.tags.length > 0 && <li class="pub-tags">{pub.tags.join(' · ')}</li>}
+  </ul>
+</article>

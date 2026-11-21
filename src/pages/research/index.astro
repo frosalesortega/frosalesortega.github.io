@@ -1,0 +1,43 @@
+---
+import Page from '../../layouts/Page.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { site } from '../../lib/data';
+import { getProjects, getThemes } from '../../lib/content';
+import { href } from '../../lib/url';
+
+const themes = await getThemes();
+const projects = await getProjects();
+const current = projects.filter((p) => p.data.status === 'active');
+const past = projects.filter((p) => p.data.status !== 'active');
+const sizes = '(min-width: 1024px) 500px, (min-width: 640px) 45vw, 92vw';
+---
+<Page title="Research" description={`Research areas and projects of ${site.name}.`} lede={site.researchLede}>
+  {themes.length > 0 && (
+    <section class="section" aria-label="Research areas">
+      <div class="areas">
+        {themes.map((t) => (
+          <div id={t.id}>
+            <h3>{t.data.title}</h3>
+            <p>{t.data.summary}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {current.length > 0 && (
+    <section class="section" id="projects" aria-labelledby="h-current">
+      <h2 id="h-current">Current projects</h2>
+      <ul class="cards cards-lg">{current.map((p) => <ProjectCard project={p} meta sizes={sizes} />)}</ul>
+    </section>
+  )}
+
+  {past.length > 0 && (
+    <section class="section" id="past-projects" aria-labelledby="h-past">
+      <h2 id="h-past">Past projects</h2>
+      <ul class="cards cards-lg">{past.map((p) => <ProjectCard project={p} meta sizes={sizes} />)}</ul>
+    </section>
+  )}
+
+  <p class="section">Scientific tools are on the <a href={href('/research/software/')}>Software &amp; data</a> page.</p>
+</Page>

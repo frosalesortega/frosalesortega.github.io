@@ -1,0 +1,36 @@
+---
+import { site } from '../lib/data';
+import { href, isCurrent } from '../lib/url';
+const current = Astro.url.pathname;
+---
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-name" href={href('/')} aria-label={`${site.name}, home`}>{site.name}</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main" data-nav>
+      <ul>
+        {site.nav.map((n) => (
+          <li><a href={href(n.path)} aria-current={isCurrent(n.path, current) ? 'page' : undefined}>{n.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+<script is:inline>
+  (function () {
+    var btn = document.querySelector('[data-nav-toggle]');
+    var nav = document.querySelector('[data-nav]');
+    if (!btn || !nav) return;
+    var mq = window.matchMedia('(min-width: 860px)');
+    function set(open) {
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      nav.setAttribute('data-collapsed', open ? 'false' : 'true');
+    }
+    set(false);
+    btn.addEventListener('click', function () { set(btn.getAttribute('aria-expanded') !== 'true'); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') { set(false); btn.focus(); }
+    });
+    mq.addEventListener('change', function () { set(false); });
+  })();
+</script>

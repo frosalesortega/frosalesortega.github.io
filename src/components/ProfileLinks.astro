@@ -1,0 +1,10 @@
+---
+import { site } from '../lib/data';
+interface Props { label?: string }
+const { label = 'Academic and professional profiles' } = Astro.props;
+---
+{site.profiles.length > 0 && (
+  <ul class="profile-links" aria-label={label}>
+    {site.profiles.map((p) => <li><a href={p.url} rel="noopener">{p.label}</a></li>)}
+  </ul>
+)}

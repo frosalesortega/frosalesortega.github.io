@@ -1,0 +1,42 @@
+---
+import Page from '../../layouts/Page.astro';
+import { site, outreach } from '../../lib/data';
+import { getCollection } from 'astro:content';
+import { href } from '../../lib/url';
+import { formatLooseDate } from '../../lib/dates';
+
+const pages = await getCollection('pages');
+---
+<Page title="Outreach" description={`Science communication by ${site.name}: lectures, radio and TV, press, writing.`} lede={outreach.intro}>
+  {outreach.groups.map((g, i) => (
+    <section class="section" aria-labelledby={`g-${i}`}>
+      <h2 id={`g-${i}`}>{g.heading}</h2>
+      <ul class="row-list">
+        {g.items.map((it) => (
+          <li>
+            <span class="row-date">{formatLooseDate(it.date)}</span>
+            <span>
+              {it.url ? <a href={it.url} rel="noopener">{it.title}</a> : it.title}
+              {it.venue && <span class="muted">, {it.venue}</span>}
+              {it.archiveUrl && <span class="muted"> · <a href={it.archiveUrl} rel="noopener">archived copy</a></span>}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+
+  {pages.length > 0 && (
+    <section class="section" aria-labelledby="h-more">
+      <h2 id="h-more">Also</h2>
+      <ul class="cards cards-lg" style="grid-template-columns: 1fr">
+        {pages.map((p) => (
+          <li class="card">
+            <h3><a href={href(`/outreach/${p.id}/`)}>{p.data.title}</a></h3>
+            {p.data.description && <p class="muted">{p.data.description}</p>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+</Page>

@@ -1,0 +1,19 @@
+---
+// Old /about/ address: the About page was merged into the home page. Static redirect, kept out of the sitemap.
+import { href, absoluteUrl } from '../lib/url';
+const target = href('/');
+const canonical = absoluteUrl('/', Astro.site);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting to the home page</title>
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <link rel="canonical" href={canonical} />
+  </head>
+  <body>
+    <p>This page has moved to the <a href={target}>home page</a>.</p>
+  </body>
+</html>

@@ -1,0 +1,279 @@
+# CV content (generated once from CV_Anthropic.tex and the detailed CV files; edit freely).
+# Mirrors CV_Anthropic.tex (final version, 20 Nov 2026).
+metrics:
+  total: 109
+  refereed: 73
+  firstAuthorRefereed: 6
+  citations: 7,100+
+  hIndex: 38
+  source: Google Scholar
+  asOf: November 2026
+sections:
+- id: interests
+  title: Research interests
+  items:
+  - body: Chemical abundances and metallicity calibrations of ionised gas.
+  - body: Physical conditions and ionisation of the interstellar medium, including diffuse ionised gas.
+  - body: Integral-field spectroscopy of nearby galaxies.
+  - body: Galaxy chemical evolution.
+  - body: Astronomical instrumentation for optical and infrared observations.
+  - body: Scientific data analysis and computational methods for large spectroscopic datasets.
+- id: affiliations
+  title: Affiliations & memberships
+  items:
+  - label: INAOE
+    body: Coordinación de Astrofísica, Tonantzintla, Puebla, Mexico (INAOE/SECIHTI).
+  - label: SNII
+    body: Level II, Mexico’s National System of Researchers (Level I 2014–2025; Candidate 2011–2013).
+  - label: FRAS
+    body: Fellow of the Royal Astronomical Society, since 2008.
+  - label: IAU
+    body: Member of the International Astronomical Union.
+- id: current
+  title: Current position
+  items:
+  - label: Present
+    title: Tenured Research Scientist (Investigador Titular C)
+    body: Instituto Nacional de Astrofísica, Óptica y Electrónica (INAOE/SECIHTI), Tonantzintla, Mexico. Member of Mexico’s National System of Researchers (SNII), Level II.
+- id: appointments
+  title: Appointments
+  items:
+  - label: Present
+    title: Tenured Researcher, Level C (Investigador Titular C)
+    body: INAOE/SECIHTI, Mexico.
+  - label: 2018–2026
+    title: Senior Researcher, Level B (Investigador Titular B; tenure granted in 2021)
+    body: INAOE.
+  - label: 2012–2018
+    title: Senior Researcher, Level A (Investigador Titular A)
+    body: Coordinación de Astrofísica, INAOE.
+  - label: 2011–2012
+    title: Postdoctoral associate
+    body: Departamento de Física Teórica, Universidad Autónoma de Madrid, and Centro Astronómico Hispano-Alemán, Calar Alto, Spain.
+  - label: 2010–2011
+    title: Postdoctoral associate
+    body: Centro de Astrobiología (CSIC-INTA), Madrid, Spain.
+- id: education
+  title: Education
+  items:
+  - label: 2006–2009
+    title: PhD in Astronomy, University of Cambridge
+    body: 'Institute of Astronomy, Cambridge, UK. Thesis: <em>Multi-dimensional analysis of the chemical and physical properties of spiral galaxies</em>. <a href="https://doi.org/10.17863/CAM.15992">Repository</a>. Supervisor: Prof. Robert C. Kennicutt, Plumian Professor of Astronomy and Experimental Philosophy.'
+  - label: 2004–2006
+    title: MSc in Astrophysics, INAOE, with first class honours
+    body: 'Mexico. Paris Pişmiş Prize for the best Mexican MSc thesis in astronomy (2006–2007). Thesis: <em>Determination of primordial helium abundance from the Sloan Digital Sky Survey data</em>. <a href="https://inaoe.repositorioinstitucional.mx/jspui/handle/1009/1945">Repository</a>. Supervisors: Dr Roberto Terlevich and Dr Elena Terlevich.'
+  - label: 2000–2004
+    title: BSc in Physics, <em>Ad Honorem</em>, Benemérita Universidad Autónoma de Puebla (<a href="https://www.buap.mx/">BUAP</a>)
+    body: 'Mexico. Thesis: <em>Determination of primordial helium abundance</em>. Supervisor: Dr Roberto Terlevich.'
+  - label: 1998–2000
+    title: International Baccalaureate, United World College of the Adriatic (UWCAd), Italy
+    body: Full scholarship.
+    url: https://www.uwcad.it/
+- id: projects
+  title: Technical leadership & research projects
+  items:
+  - label: 2012–2018
+    title: 'TSPM: Project Scientist'
+    body: 6.5 m San Pedro Mártir Telescope. Collaboration of INAOE, IA-UNAM, U. Arizona, Smithsonian Astrophysical Observatory and Harvard U.; project led by W. Lee (IA-UNAM). Reached the Critical Design Review phase; paused in 2018.
+    slug: tspm
+  - label: 2026–present
+    title: 'TARSET: Principal Investigator'
+    body: <em>Tonantzintla ARchival SEarch for Transients.</em> Search for fast optical transients on the pre-Sputnik Schmidt-camera plates of INAOE’s Tonantzintla photographic archive (14,613 digitised plates), as an independent test of the <a href="https://scixplorer.org/abs/2025arXiv250715896V/abstract">VASCO</a> project. Participant of the <a href="https://lostlightproject.netlify.app/">Lost Light Project</a>, an open international challenge in archival astronomy.
+    slug: tarset
+  - label: 2022–present
+    title: 'BETIS: Principal Investigator'
+    body: <em>Bidimensional Exploration of the warm-Temperature Ionised gaS.</em> INAOE, Instituto de Astrofísica de Andalucía (IAA-CSIC) and Universidad Autónoma de Barcelona. Basis of two PhD theses in INAOE–UAB co-tutelle. <a href="https://betis-amusing.netlify.app/">Website</a>.
+    slug: betis
+  - label: 2016–2018
+    title: 'OFIUCO: Principal Investigator and Technical Manager'
+    body: <em>Optical Fourier-transform Imaging Unit for Cananea Observatory.</em> Head of INAOE’s Fourier Spectroscopy Laboratory (2016–present). CONACyT grant INFR-271124, MXN 4,876,000 (≈ USD 261,000). INAOE and IA-UNAM.
+    slug: ofiuco
+  - label: 2018–present
+    title: 'FICCO: Principal Investigator'
+    body: <em>Fast Imaging Camera for Cananea Observatory.</em> Instrument available to the national astronomical community at the Observatorio Astrofísico Guillermo Haro (OAGH).
+    slug: ficco
+  - label: 2007–2010
+    title: 'PINGS: Principal Investigator'
+    body: <em>PPAK IFS Nearby Galaxies Survey.</em> PINGS and CALIFA are two of the first integral-field spectroscopy surveys of nearby galaxies.
+    slug: pings
+  - label: 2010–2016
+    title: 'CALIFA: Founding member of the science team'
+    body: <em>Calar Alto Legacy Integral Field Area survey.</em>
+    slug: califa
+  - label: '2011'
+    title: 'JWST-NIRSpec: Member of the cryogenic testing team'
+    body: NIRSpec spectrograph of the James Webb Space Telescope. Centro de Astrobiología (CSIC-INTA) and ESA-ESTEC.
+    slug: jwst-nirspec
+  - label: 2013–2017
+    title: 'SELGIFS: Co-PI and National Coordinator'
+    body: <em>Study of Emission Line Galaxies with Integral Field Spectroscopy.</em> Marie Curie IRSES (FP7-PEOPLE-2013-IRSES-612701), €237,000 (≈ USD 315,000). Also co-PI of a UAM–Santander project with Latin America (€12,570 ≈ USD 14,000; 2017–2018).
+    slug: selgifs
+  - label: 2024–present
+    title: 'DESIRED: Collaborator'
+    body: '<em>DEep Spectra of Ionized REgions Database.</em> PI: J. E. Méndez-Delgado (IA-UNAM); IA-UNAM, INAOE and Instituto de Astrofísica de Canarias. Lead author of the first calibrations paper (<em>MNRAS</em>, published online / in press, 2026; <a href="https://doi.org/10.1093/mnras/stag1963">doi:10.1093/mnras/stag1963</a>). <a href="https://github.com/frosalesortega/desired-calibrations/">Repository</a>.'
+    slug: desired
+  - label: 2024–present
+    title: 'ÉBANO: Collaborator'
+    body: '<em>Espectrógrafo de Barrido ANgular en el Óptico.</em> PI: S. F. Sánchez (IA-UNAM), 2024–present.'
+    slug: ebano
+  - label: 2016–present
+    title: 'AMUSING: Collaborator'
+    body: '<em>All-weather MUse Supernova Integral field Nearby Galaxies survey</em> (VLT/MUSE). PI: J. Anderson (ESO).'
+    slug: amusing
+  - label: 2024–present
+    title: 'SWGO: Collaborator'
+    body: Southern Wide-field Gamma-ray Observatory.
+    slug: swgo
+- id: entrepreneurship
+  title: Entrepreneurship
+  items:
+  - label: 2016–2024
+    title: 'Check-Eat México: Co-founder &amp; CEO'
+    body: 'Developed and brought to market <em>Check-Eat #CómeteLaFila</em>, a mobile app (iOS and Android) for remote ordering and contactless payment of food and drinks at schools, universities, stadiums and live events. Selected as one of the 100 Latin American start-ups with most potential (INCMty Acceleration, 2017); participated in national and international acceleration programmes, including Startup México Select (2018), Impact Hub (2018), Angel Ventures (2019), MassChallenge (2019) and AceleraLatam (2021). Raised private capital through the seed stage.'
+  - label: 2023–present
+    title: '<a href="https://eclipses.mx">eclipses.mx</a> (2023–2024) and <a href="https://iberoeclipses.com">IberoEclipses</a> (2025–present): Founder &amp; CEO'
+    body: Supply and logistics of custom-branded solar-eclipse glasses certified to ISO 12312-2 for governments, schools, companies and institutions. Over 300,000 pairs distributed in Mexico for the 2023 and 2024 eclipses, including projects with the state governments of Yucatán and Sinaloa; IberoEclipses serves the Spanish market for the 2026–2028 eclipses.
+- id: honours
+  title: Honours & awards
+  items:
+  - label: Present
+    title: SNII Level II
+    body: Mexico’s National System of Researchers, Level II (current); Level I (2014–2025); Candidate (2011–2013).
+  - label: 2008–present
+    title: Fellow of the Royal Astronomical Society (FRAS)
+  - label: 2006–2007
+    title: Paris Pişmiş Prize
+    body: Best Mexican MSc thesis in astronomy, astrophysics, cosmology and space science.
+  - label: 2007–2009
+    title: SEP Excellence programme scholarship
+    body: Ministry of Education, Mexico.
+  - label: 2006–2009
+    title: CONACyT scholarship; Rouse Ball and Eddington Research Fund grant
+    body: University fees and maintenance for the PhD at the University of Cambridge (CONACyT); travel and living expenses for PhD fieldwork (Trinity College, Cambridge).
+  - label: '2007'
+    title: MAGPOP Summer School grant
+    body: Multi-wavelength Analysis of Galaxy Populations, European Union Research Training Network.
+  - label: '2006'
+    title: Latin American-European Network for Astrophysics and Cosmology grant
+    body: Institute for Computational Cosmology, University of Durham.
+  - label: 2003, 2005
+    title: Premio Nacional de la Juventud
+    body: Finalist.
+  - label: '2003'
+    title: Vatican Observatory Summer School (VOSS)
+    body: Selected for the IX Vatican Observatory Summer School, Castelgandolfo, Italy (summer 2003).
+  - label: '2004'
+    title: BSc in Physics, <em>Ad Honorem</em>
+    body: Benemérita Universidad Autónoma de Puebla.
+- id: service
+  title: Service, evaluation & leadership
+  items:
+  - label: Governance
+    body: Mexico’s representative on the GTC Users Committee, Gran Telescopio Canarias (2026–2028). Secretary of INAOE’s academic staff college (Colegio del Personal Académico; 2025–2027).
+  - label: Review panels and TACs
+    body: 'Hubble Space Telescope review panel, STScI, Cycles 28–30 (2020–2022). External reviewer, GTC Time Allocation Committee (CATT-MEX: 2025B, 2026B, 2027A). Chair (2014) and member (2013–2019) of the OAGH Time Allocation Committee.'
+  - label: Grant evaluation
+    body: Evaluator for CONACyT/SECIHTI programmes (Frontier Science, Infrastructure, Postdoctoral Stays; 2020–2024), PAPIIT-UNAM and the Mexican Academy of Sciences. Member of INAOE’s performance-incentive evaluation committee (2023, 2024). Thesis examiner at INAOE and UNAM.
+  - label: Refereeing
+    body: <em>Nature Astronomy</em>, <em>Astronomy &amp; Astrophysics</em>, <em>The Astronomical Journal</em>, <em>MNRAS</em>, <em>PASP</em>.
+  - label: Scientific community
+    body: Co-founder of the Mexican Astronomy Network (<a href="https://groups.google.com/g/astro-mex">astro-mex</a>, 2018) and of the professional networks of Mexican scientists <a href="https://x.com/RedProcienciaMx">ProCienciaMx</a> (2019) and <a href="https://x.com/CienciaPluralMX">CienciaPluralMx</a> (2022).
+  - label: Meetings
+    body: 'Chair of the scientific and local organising committees, <em>Guillermo Haro 2026 Workshop: Chemical Abundances, ISM Properties, and Galaxy Evolution Across Cosmic Time</em>, INAOE, 20–31 July 2026. Chair of the local organising committee of the Cozumel 2016 conference <em>The Interplay Between Local and Global Processes in Galaxies</em> and of the Guillermo Haro workshops of 2013 and 2014.'
+- id: teaching
+  title: Teaching
+  items:
+  - label: 2014–2026
+    title: Observational Optical and Infrared Astronomy
+    body: <em>Astronomía Observacional Óptica e Infrarroja</em>, MSc in Astrophysics, INAOE. Twelve consecutive editions, with full syllabus revisions in 2022 and 2024.
+  - label: Aug 2025
+    title: Invited instructor, Alpha-Cen Summer School
+    body: '<em>Fundamentos de Astronomía Extragaláctica</em>. Alpha-Cen: Astrofísica Centroamericana y del Caribe.'
+    url: https://astro.alphacen.org/
+  - label: '2014'
+    title: Guillermo Haro 2014 Advanced School on Integral Field Spectroscopy Techniques and Analysis
+    body: Scientific Organising Committee chair and lecturer. INAOE, 25 August to 5 September 2014.
+    url: https://www.inaoep.mx/~progharo/gh2014School/index.html
+- id: supervision
+  title: Supervision & mentoring
+  items:
+  - label: In progress
+    title: J. F. Valencia Hernández (PhD)
+    body: Principal advisor. INAOE–Universidad Autónoma de Barcelona co-tutelle. Expected 2029.
+  - label: '2024'
+    title: R. González Díaz (PhD, <em>Cum Laude</em>)
+    body: Principal advisor. INAOE–UAB co-tutelle. Now postdoctoral researcher, IAA-CSIC, Spain.
+  - label: '2022'
+    title: M. A. Nieto Suárez (PhD)
+    body: Principal advisor. INAOE. Now lecturer, University of Miami, USA.
+  - label: '2021'
+    title: A. Morales Vargas (PhD)
+    body: Co-supervisor. Universidad de Guanajuato. Now postdoctoral researcher, Universidad de Antofagasta, Chile.
+  - label: '2019'
+    title: M. Rodríguez Baras (PhD, <em>Cum Laude</em>)
+    body: Co-supervisor. Universidad Autónoma de Madrid. Now research scientist, Observatorio Astronómico Nacional (OAN-IGN), Spain.
+  - label: MSc, BSc and others
+    body: Supervised 4 MSc and 3 BSc theses (one in progress), and mentored over 20 students in research stays, summer programmes and social-service placements.
+- id: talks
+  title: Invited & contributed talks
+  items:
+  - label: Sep 2025
+    title: “A new generation of empirical metallicity calibrations based on a comprehensive Te-based approach for local and high-z studies”
+    body: '<em>Poster.</em> IAUS 402: Massive stars across redshifts in the era of JWST and large surveys. Ensenada, Baja California, Mexico, 15–19 September 2025.'
+  - label: Oct 2024
+    title: '“e-BETIS: Spatially resolved spectroscopy of extraplanar diffuse ionized gas in nearby star-forming galaxies”'
+    body: <em>Talk.</em> LXVII Congreso Nacional de Física 2024. Universidad Autónoma de Chihuahua, Mexico, 6 October 2024.
+  - label: May 2024
+    title: “New empirical metallicity calibrations based on the largest catalogue of high-quality Te-based literature data”
+    body: '<em>Talk.</em> Chemical abundances in gaseous nebulae: Multi-scale metals throughout the universe. Universidade do Vale do Paraíba, São José dos Campos, Brazil, 6 May 2024.'
+  - label: Oct 2023
+    title: “New empirical metallicity calibrations based on the largest catalogue of high-quality Te-based literature data”
+    body: <em>Talk.</em> LXVI Congreso Nacional de Física. Morelia, Michoacán, Mexico, 9 October 2023.
+  - label: Mar 2022
+    title: “Gauging the impact of spectral synthesis and emission line fitting methods on IFS gas-phase studies”
+    body: <em>Poster.</em> Large-volume spectroscopic analyses of AGN and star forming galaxies in the era of JWST Workshop. Virtual meeting (USA), 29 March 2022.
+  - label: Jul 2020
+    title: “A differential study of inner and outer disk HII regions of nearby spiral galaxies”
+    body: <em>Talk.</em> Scientific (virtual) Meeting of the Spanish Astronomical Society. Virtual meeting (Spain), 13 July 2020.
+  - label: Oct 2019
+    title: “Examinando la física del medio interestelar con el catálogo más completo y moderno de regiones HII con líneas aurorales”
+    body: <em>Poster.</em> XXVII Congreso Nacional de Astronomía. Morelia, Mexico, 7 October 2019.
+  - label: Oct 2018
+    title: “Explorando el gas difuso en galaxias espirales con MUSE”
+    body: <em>Talk.</em> XXVII Congreso Nacional de Astronomía. Puebla, Mexico, 11 October 2018.
+  - label: Oct 2018
+    title: “Explorando las abundancias químicas del medio interestelar a través de regiones HII”
+    body: <em>Poster.</em> XXVII Congreso Nacional de Astronomía. Puebla, Mexico, 9 October 2018.
+  - label: Oct 2017
+    title: “Gauging the impact of spectral synthesis and emission line fitting methods on IFS gas-phase studies”
+    body: <em>Talk.</em> The cosmic feast of the elements, Guillermo Haro Workshop. INAOE, Mexico, 27 October 2017.
+  - label: Oct 2017
+    title: “Ciencia, sinergias y nichos de oportunidad con el TSPM”
+    body: <em>Talk.</em> XXVI Congreso Nacional de Astronomía. Monterrey, Mexico, 10 October 2017.
+  - label: Sep 2017
+    title: '“From CALIFA to MEGARA: Exploring the central regions of galaxies”'
+    body: <em>Talk.</em> Proposing and processing MEGARA observations with GTC. INAOE, Mexico, 19 September 2017.
+  - body: The 12 most recent items from the full list of conference contributions (2001–2025) are shown.
+- id: software
+  title: Software & technical skills
+  items:
+  - label: Programming
+    body: Python, IDL, Shell, Perl, HTML; scientific computing; spectral analysis tools; data reduction pipelines.
+  - label: Methods
+    body: Integral-field spectroscopy; chemical abundance analysis.
+  - label: Instrumentation
+    body: Optical and infrared astronomical instrumentation (PI of the OFIUCO and FICCO instruments).
+  - label: Open source
+    body: <a href="https://github.com/frosalesortega/desired-calibrations">desired-calibrations</a> (public repository, <a href="https://academic.oup.com/mnras/advance-article/doi/10.1093/mnras/stag1963/8979798"><em>MNRAS</em>, 2026</a>); PINGSOFT, an IDL package for visualising and manipulating integral-field spectroscopic data (sole author, <em>New Astronomy</em>, 2011).
+  - label: Open-data projects (LLM-assisted)
+    body: '<a href="https://presupuesto-ciencia-mx.netlify.app/"><em>Presupuesto de CTI · México</em></a>: public dashboard, datasets and reports on Mexico’s federal science, technology and innovation budget (2012–2027), built from government open data and World Bank indicators. Developed with Claude as an LLM coding assistant; the questions, data sources and methodology are my own.'
+  - label: Institutional software
+    body: Developed the web reporting system of INAOE’s Astrophysics Division, later adopted as the basis of INAOE’s institution-wide reporting system.
+- id: outreach
+  title: Outreach
+  items:
+  - body: Dozens of public lectures, regular participation in a radio programme, press and TV interviews, and public observing events for the 2023 and 2024 solar eclipses in Mexico. See the Outreach page for the full list.
+- id: languages
+  title: Languages
+  items:
+  - body: Spanish (native); English (proficient, certified); Italian (advanced, certified); French (basic).

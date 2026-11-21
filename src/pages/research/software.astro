@@ -1,0 +1,57 @@
+---
+import Page from '../../layouts/Page.astro';
+import { site, policy, pubByKey, pubId } from '../../lib/data';
+import { getSoftware, getProjects } from '../../lib/content';
+import { href } from '../../lib/url';
+
+const policyDashboard = policy.project?.url ?? 'https://presupuesto-ciencia-mx.netlify.app/';
+const software = await getSoftware();
+const projects = await getProjects();
+const entries = software.map((s) => {
+  const paper = pubByKey(s.data.paper);
+  const proj = projects.find((p) => p.id === s.data.project);
+  const meta = [s.data.language, s.data.license, s.data.status].filter(Boolean).join(' · ');
+  const links: { label: string; url: string; external: boolean }[] = [];
+  if (s.data.repo) links.push({ label: 'Repository', url: s.data.repo, external: true });
+  if (s.data.docs) links.push({ label: 'Docs', url: s.data.docs, external: true });
+  (s.data.downloads ?? []).forEach((l) => links.push({ label: l.label, url: l.url, external: true }));
+  if (paper) links.push({ label: 'Paper', url: href(`/publications/#${pubId(paper.key)}`), external: false });
+  if (proj) links.push({ label: proj.data.acronym, url: href(`/research/${proj.id}/`), external: false });
+  return { s, meta, links };
+});
+---
+<Page title="Software and data" description={`Scientific software and data products by ${site.name}.`}>
+  <a slot="before" class="back" href={href('/research/')}>Research</a>
+  {entries.map(({ s, meta, links }) => (
+    <section class="sw" id={s.id} aria-labelledby={`h-${s.id}`}>
+      <h2 id={`h-${s.id}`}>{s.data.name}</h2>
+      <p>{s.data.summary}</p>
+      {meta && <p class="sw-meta">{meta}</p>}
+      {links.length > 0 && (
+        <ul class="inline-links">
+          {links.map((l) => <li><a href={l.url} rel={l.external ? 'noopener' : undefined}>{l.label}</a></li>)}
+        </ul>
+      )}
+    </section>
+  ))}
+
+  <section class="sw" id="open-data" aria-labelledby="h-open-data">
+    <h2 id="h-open-data">Open-data projects</h2>
+    <h3 class="sw-name">Presupuesto de CTI · México</h3>
+    <p>Public dashboard, datasets and reports on Mexico's federal science, technology and innovation budget (2012–2027), built from government open data and World Bank indicators.</p>
+    <p class="sw-meta">Developed with Claude as an LLM coding assistant; the questions, data sources and methodology are my own.</p>
+    <ul class="inline-links">
+      <li><a href={policyDashboard} rel="noopener">Dashboard</a></li>
+      <li><a href={href('/science-policy/')}>Science Policy page</a></li>
+    </ul>
+  </section>
+
+  {site.otherRepos.length > 0 && (
+    <section class="section" aria-labelledby="h-other">
+      <h2 id="h-other">Other repositories</h2>
+      <ul class="link-list">
+        {site.otherRepos.map((r) => <li><a href={r.url} rel="noopener">{r.name}</a>{r.description && <> — {r.description}</>}</li>)}
+      </ul>
+    </section>
+  )}
+</Page>

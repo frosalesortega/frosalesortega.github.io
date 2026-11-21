@@ -1,0 +1,226 @@
+# Outreach activities (from the CV; the source list covers only the last five years).
+intro: Public lectures, radio and television, press and writing.
+groups:
+- heading: Public lectures & outreach talks
+  items:
+  - date: '2025-11-07'
+    title: 'De la Medicina al WiFi: el impacto de la astronomía en nuestra vida y sociedad'
+    venue: Escuela de Otoño de Astrofísica Avanzada 2025, Museo Regional de Cholula
+    kind: Public lecture
+  - date: 2025-08
+    title: Fundamentos de Astronomía Extragaláctica
+    venue: Escuela de Verano Alpha-Cen
+    kind: Workshop
+  - date: '2025-05-24'
+    title: 'Entre el cosmos y la fe: la conexión entre la astronomía y la simbología cristiana'
+    venue: Sociedad de Científicos Anónimos
+    kind: Public lecture
+  - date: '2024-11-27'
+    title: ¿Para qué sirve la astrofísica?
+    venue: Feria Vocacional Texmalaquilla, Bachillerato Digital No. 147, Santa Cruz Texmalaquilla, Atzizintla, Puebla
+    kind: Vocational outreach talk
+  - date: '2024-11-09'
+    title: 'Hubble: el personaje y el telescopio que revolucionaron nuestra visión del universo'
+    venue: La Noche de las Estrellas 2024, Museo Regional de Cholula
+    kind: Public lecture
+  - date: '2023-10-25'
+    title: Un acercamiento con la astronomía
+    venue: Semana Nacional de Ciencia y Tecnología 2023, CETIS No. 104
+    url: https://twitter.com/FRosalesO/status/1717636925203370191
+    kind: Public lecture
+  - date: '2023-09-28'
+    title: ¿De dónde viene la Luna?
+    venue: Ciclo de Conferencias Rumbo a los eclipses solares 2023–2024, INAOE
+    url: https://www.youtube.com/watch?v=grBGHlGu7b4
+    kind: Public lecture
+  - date: '2023-07-28'
+    title: Telescopio San Pedro Mártir (TSPM)
+    venue: 'Proyectando México: Los proyectos más influyentes del país, Project Management Institute (PMI), capítulo Jalisco'
+    kind: Public lecture
+  - date: '2023-07-12'
+    title: 'Las galaxias: un rompecabezas de gases y estrellas'
+    venue: Feria de Ciencias, Centro Escolar Dr. Alfredo Toxqui Fernández de Lara (CEDAT)
+    url: https://twitter.com/FRosalesO/status/1679163406161690625
+    kind: Public lecture
+  - date: '2023-05-24'
+    title: Primeros resultados científicos del telescopio espacial James Webb
+    venue: 3er Encuentro de Ciencias Espaciales, Sociedad Astronómica ESIA Ticomán
+    kind: Public lecture
+  - date: '2022-02-10'
+    title: 'El nuevo telescopio espacial James Webb: en búsqueda de los orígenes del universo'
+    venue: Conferencias Jueves y Viernes en la Ciencia, CONCyTEP
+    url: https://youtu.be/OixMsSOx8-w
+    kind: Public lecture
+  - date: '2021-12-02'
+    title: 'Las galaxias: un rompecabezas de gases y estrellas'
+    venue: Foro Cultural Karuzo, Puebla
+    url: https://fb.watch/bwMf34p14_
+    kind: Public lecture
+  - date: '2021-05-24'
+    title: El próximo telescopio espacial
+    venue: Seminario, Sociedad Astronómica ESIA Ticomán, IPN
+    url: https://www.facebook.com/SAESIATicoman
+    kind: Seminar
+- heading: Radio & television
+  items:
+  - date: '2026-05-29'
+    title: 'El proyecto VASCO: ¿objetos en la órbita terrestre antes del Sputnik?'
+    venue: Frontera Espacial, 105.9 FM, SICOM Radio (Sistema Estatal de Telecomunicaciones, Puebla)
+    url: https://web.facebook.com/fronteraespacial
+    kind: Radio programme
+  - date: '2025-10-31'
+    title: El objeto interestelar 3I/ATLAS
+    venue: Frontera Espacial, 105.9 FM, SICOM Radio (Sistema Estatal de Telecomunicaciones, Puebla)
+    url: https://www.facebook.com/share/p/1CQfj7WBq6
+    kind: Radio programme
+  - date: '2025-05-02'
+    title: 'Hubble: El hombre y el telescopio que revolucionaron nuestra visión del Universo'
+    venue: Frontera Espacial, 105.9 FM, SICOM Radio (Sistema Estatal de Telecomunicaciones, Puebla)
+    url: https://www.facebook.com/share/p/1Aq2DYhTYD/
+    kind: Radio programme
+  - date: '2024-10-25'
+    title: El cometa del siglo
+    venue: Frontera Espacial, 105.9 FM, SICOM Radio (Sistema Estatal de Telecomunicaciones, Puebla)
+    url: https://tinyurl.com/2ya4jv2x
+    kind: Radio programme
+  - date: '2023-09-29'
+    title: La postura de la ciencia ante los Fenómenos Anómalos No Identificados
+    venue: Frontera Espacial, 105.9 FM, SICOM Radio (Sistema Estatal de Telecomunicaciones, Puebla)
+    url: https://tinyurl.com/284bdpnf
+    kind: Radio programme
+  - date: '2023-07-17'
+    title: 'Medio Interestelar: materia y energía'
+    venue: Desarrollando Ciencia, 105.9 FM, SICOM Radio (Sistema Estatal de Telecomunicaciones, Puebla)
+    url: https://go.ivoox.com/rf/112572814
+    kind: Radio programme
+  - date: '2023-06-16'
+    title: Últimos descubrimientos del telescopio espacial James Webb
+    venue: Frontera Espacial, 105.9 FM, SICOM Radio (Sistema Estatal de Telecomunicaciones, Puebla)
+    url: https://fb.watch/lgpWVXVsNA/
+    kind: Radio programme
+  - date: '2023-02-03'
+    title: Única oportunidad de ver el Cometa Verde
+    venue: TV Azteca Puebla
+    url: https://youtu.be/tCqL3m5V3zs
+    kind: TV interview
+  - date: '2022-08-26'
+    title: Plutón a 7 años de la llegada de la sonda espacial New Horizons
+    venue: Frontera Espacial, 105.9 FM, SICOM Radio (Sistema Estatal de Telecomunicaciones, Puebla)
+    kind: Radio programme
+  - date: '2022-07-22'
+    title: Primeras imágenes del telescopio espacial James Webb
+    venue: Frontera Espacial, 105.9 FM, SICOM Radio (Sistema Estatal de Telecomunicaciones, Puebla)
+    kind: Radio programme
+- heading: Press & interviews
+  items:
+  - date: '2023-09-17'
+    title: Así puedes apreciar los eclipses que se verán desde Veracruz
+    venue: Imagen del Golfo
+    url: https://imagendelgolfo.mx/estado/asi-puedes-apreciar-los-eclipses-que-se-veran-desde-veracruz/50433634
+    kind: Interview
+  - date: '2023-02-01'
+    title: Cometa verde, visible a simple vista hoy y mañana
+    venue: Diario NBC
+    url: https://nbcdiario.com.mx/cometa-verde-visible-a-simple-vista-hoy-y-manana
+    kind: Interview
+  - date: '2023-01-31'
+    title: ¿Qué debes saber para ver el Cometa Verde este 1º y 2 de febrero?
+    venue: Central de Noticias Imagen del Golfo
+    url: https://imagendelgolfo.mx/estado/esto-debes-saber-para-ver-el-cometa-verde/50307939
+    kind: Interview
+  - date: '2023-01-28'
+    title: Científicos esperan con interés el paso del Cometa Verde
+    venue: Diario del Istmo
+    url: https://diariodelistmo.com/estatal/cientificos-esperan-con-interes-el-paso-del-cometa-verde/50306047
+    kind: Interview
+  - date: 2022-08
+    title: Estudios fuera de este mundo
+    venue: Revista Universitarios, Periódico Reforma
+    url: https://bit.ly/3W68t5I
+    kind: Interview
+- heading: Science writing & publications
+  items:
+  - date: '2025'
+    title: ¿Se podrá vivir en otro planeta, como Marte?
+    venue: COLIBRIES, revista de divulgación científica, Centro de Investigación en Alimentación y Desarrollo (CIAD)
+    url: https://www.ciad.mx/colibries/
+    kind: Science capsule
+  - date: 2024-03
+    title: 'De la medicina al Wi-Fi: Aplicaciones Técnicas de la Astronomía en la Sociedad'
+    venue: 'INAOE. Role: editor and Spanish translator, with Jennifer Itzel Garzón Marcelo (BUAP). Spanish edition of an International Astronomical Union publication (2019) edited by Bethany Downer, Michael Burton, Ewine van Dishoeck and Pedro Russo.'
+    url: https://tinyurl.com/2spktm9w
+    kind: Science communication pamphlet
+  - date: '2024-09-12'
+    title: El saldo en ciencia, tecnología e innovación durante la administración federal 2018–2024
+    venue: X (@FRosalesO); more than 37k views. See also the Science Policy page.
+    url: https://x.com/FRosalesO/status/1834417575679111629
+    archiveUrl: https://threadreaderapp.com/thread/1834417575679111629.html
+    kind: Opinion thread
+  - date: '2024-06-01'
+    title: Sobre la importancia de la administración 2018–2024 a ciencia, tecnología e innovación
+    venue: X (@FRosalesO); more than 162k views. See also the Science Policy page.
+    url: https://x.com/FRosalesO/status/1796780110395183356
+    archiveUrl: https://threadreaderapp.com/thread/1796780110395183356.html
+    kind: Opinion thread
+  - date: '2023-09-10'
+    title: Science, technology and innovation in the 2024 federal budget proposal (PPEF 2024)
+    venue: X (@FRosalesO). See also the Science Policy page.
+    url: https://twitter.com/FRosalesO/status/1701386051380723823
+    archiveUrl: https://threadreaderapp.com/thread/1701386051380723823.html
+    kind: Thread on X (in Spanish)
+  - date: '2023-09-08'
+    title: Science, technology and innovation in the Fifth Government Report
+    venue: X (@FRosalesO). See also the Science Policy page.
+    url: https://twitter.com/FRosalesO/status/1699942164657213612
+    kind: Thread on X (in Spanish)
+  - date: '2022-09-09'
+    title: Science, technology and innovation in the 2023 federal budget proposal (PPEF 2023)
+    venue: X (@FRosalesO). See also the Science Policy page.
+    url: https://twitter.com/FRosalesO/status/1568342708154138624
+    kind: Thread on X (in Spanish)
+  - date: '2021-09-14'
+    title: Science and technology in the Third Government Report
+    venue: X (@FRosalesO). See also the Science Policy page.
+    url: https://twitter.com/FRosalesO/status/1437976958533570561
+    kind: Thread on X (in Spanish)
+  - date: '2021-09-09'
+    title: Science, technology and innovation in the 2022 federal budget proposal (PPEF 2022)
+    venue: X (@FRosalesO). See also the Science Policy page.
+    url: https://twitter.com/FRosalesO/status/1436145111302164481
+    kind: Thread on X (in Spanish)
+  - date: '2019'
+    title: 'Nuevos ojos para la astronomía mexicana: el Telescopio San Pedro Mártir'
+    venue: Revista Ciencia (AMC), 1176, April–June 2019. F. F. Rosales-Ortega (INAOE) and M. Richer (IA-Ensenada, UNAM).
+    url: https://www.amc.edu.mx/revistaciencia/images/revista/70_2/PDF/12_70_2_1176_Nuevos%20Ojos.pdf
+    kind: Magazine article
+- heading: Other outreach activities
+  items:
+  - date: '2024-11-09'
+    title: Telescope public observation session
+    venue: La Noche de las Estrellas 2024, Museo Regional de Cholula
+    kind: Public observing
+  - date: '2024-04-08'
+    title: Public observation of the Great Total Solar Eclipse 2024
+    venue: Centro de Investigación en Alimentación y Desarrollo (CIAD), Mazatlán, Sinaloa
+    kind: Public observing
+  - date: '2023-10-14'
+    title: Public solar eclipse observation with filters and telescope
+    venue: Parque Soria, San Pedro Cholula, Puebla
+    url: https://twitter.com/FRosalesO/status/1714356971472818505
+    kind: Public observing
+  - date: '2023-04-22'
+    title: Observando el Sol de manera segura
+    venue: Baños de Ciencia, Escuela Secundaria Profa. María Trinidad García Islas, Coronango
+    kind: Talk
+  - date: '2023-04-15'
+    title: Observando el Sol de manera segura
+    venue: Baños de Ciencia, Universidad Iberoamericana Puebla
+    kind: Talk
+  - date: '2023-02-18'
+    title: Observando el Sol de manera segura
+    venue: Baños de Ciencia, Biblioteca Pública de San Francisco Acatepec
+    kind: Talk
+  - date: '2023-02-11'
+    title: Observando el Sol de manera segura
+    venue: Baños de Ciencia, Biblioteca Pública Regional, San Pedro Cholula
+    kind: Talk

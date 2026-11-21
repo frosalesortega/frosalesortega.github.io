@@ -1,0 +1,68 @@
+# Publication display settings. Keys are the BibTeX keys in publications.bib (NASA-SciX/ADS bibcodes).
+
+selected:
+  - "2026MNRAS.tmp.1858R"
+  - "2024A&A...691A..25G"
+  - "2024A&A...687A..20G"
+  - "2020MNRAS.495..806G"
+  - "2014A&A...563A..49S"
+  - "2013A&A...559A.114M"
+  - "2013A&A...554A..58S"
+  - "2012ApJ...756L..31R"
+  - "2012A&A...539A..73R"
+  - "2011MNRAS.415.2439R"
+  - "2011NewA...16..220R"
+  - "2010MNRAS.405..735R"
+
+# Project tags: assigned only where the paper title itself names the project or survey.
+tags:
+  "2026MNRAS.tmp.1858R": [DESIRED]
+  "2026A&A...711A.165O": [DESIRED]
+  "2026MNRAS.546ag149M": [DESIRED]
+  "2024A&A...691A..25G": [BETIS]
+  "2024A&A...687A..20G": [BETIS]
+  "2023MNRAS.526.2863M": [CALIFA]
+  "2021MNRAS.508.4216M": [CALIFA]
+  "2020MNRAS.499.4370M": [CALIFA]
+  "2019A&A...632A..59F": [CALIFA]
+  "2018MNRAS.479..917G": [CALIFA, SELGIFS]
+  "2018SPIE10700E..0ZR": [TSPM]
+  "2017A&A...597A..48F": [CALIFA]
+  "2016A&A...594A..36S": [CALIFA]
+  "2016A&A...595A..62P": [CALIFA]
+  "2016SPIE.9906E..0ST": [TSPM]
+  "2016A&A...592A.105M": [CALIFA]
+  "2016SPIE.9906E..5SR": [TSPM]
+  "2016SPIE.9906E..2EU": [TSPM]
+  "2016ApJ...826...71I": [CALIFA]
+  "2016A&A...588A..68G": [CALIFA]
+  "2016RMxAA..52..171S": [CALIFA]
+  "2016A&A...586A..22G": [CALIFA]
+  "2016A&A...585A..92G": [CALIFA]
+  "2015Galax...3..164S": [CALIFA]
+  "2015A&A...579A..45B": [CALIFA]
+  "2015A&A...576A.135G": [CALIFA]
+  "2015A&A...574A..47S": [CALIFA]
+  "2014A&A...572A..38G": [CALIFA]
+  "2014A&A...570A...6S": [CALIFA]
+  "2014A&A...569A...1W": [CALIFA]
+  "2014A&A...567A.132W": [CALIFA]
+  "2014A&A...563A..49S": [CALIFA]
+  "2014A&A...561A.129M": [CALIFA]
+  "2013A&A...559A.114M": [CALIFA]
+  "2013A&A...554A..58S": [CALIFA]
+  "2013A&A...553L...7I": [CALIFA]
+  "2013A&A...549A..87H": [CALIFA]
+  "2012A&A...538A...8S": [CALIFA]
+  "2011SPIE.8150E..0BB": [JWST-NIRSpec]
+  "2011SPIE.8150E..0CD": [JWST-NIRSpec]
+  "2011NewA...16..220R": [PINGSoft]
+  "2010MNRAS.405..735R": [PINGS]
+
+# Surnames (as in the BibTeX author field) of PhD students under supervision or co-supervision, for the dagger mark.
+students:
+  - "González-Díaz"
+  - "Nieto-Suárez"
+  - "Morales-Vargas"
+  - "Rodríguez-Baras"
+  - "Valencia-Hernández"

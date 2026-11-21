@@ -1,0 +1,36 @@
+---
+import Page from '../layouts/Page.astro';
+import CvSection from '../components/CvSection.astro';
+import PublicationItem from '../components/PublicationItem.astro';
+import PubMetrics from '../components/PubMetrics.astro';
+import { site, cv, selectedPublications } from '../lib/data';
+import { href } from '../lib/url';
+
+// The publications block is inserted after this CV section (falls back to the end).
+const PUBS_AFTER = 'entrepreneurship';
+const idx = cv.sections.findIndex((s) => s.id === PUBS_AFTER);
+const before = idx >= 0 ? cv.sections.slice(0, idx + 1) : cv.sections;
+const after = idx >= 0 ? cv.sections.slice(idx + 1) : [];
+const toc = [
+  ...before.map((s) => ({ id: s.id, title: s.title })),
+  { id: 'publications', title: 'Publications' },
+  ...after.map((s) => ({ id: s.id, title: s.title })),
+];
+const pdf = href('/cv/CV_Rosales-Ortega.pdf');
+---
+<Page title="Curriculum vitae" description={`Curriculum vitae of ${site.fullName ?? site.name}.`}>
+  <p slot="head" class="download"><a href={pdf}>Download CV (PDF)</a></p>
+  <PubMetrics />
+  <nav class="cv-index" aria-label="CV sections">
+    <ul>{toc.map((t) => <li><a href={`#${t.id}`}>{t.title}</a></li>)}</ul>
+  </nav>
+  {before.map((s) => <CvSection section={s} />)}
+  <section class="cv-section" id="publications" aria-labelledby="h-publications">
+    <h2 id="h-publications">Publications</h2>
+    <p>Full list on the <a href={href('/publications/')}>publications page</a>. Selected:</p>
+    <ul class="pub-list">
+      {selectedPublications.map((p) => <li><PublicationItem pub={p} flag={false} showTags={false} /></li>)}
+    </ul>
+  </section>
+  {after.map((s) => <CvSection section={s} />)}
+</Page>

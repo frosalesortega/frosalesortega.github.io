@@ -1,0 +1,21 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Page from '../../layouts/Page.astro';
+import { href } from '../../lib/url';
+import { markToComplete } from '../../lib/html';
+
+export async function getStaticPaths() {
+  const pages = (await getCollection('pages'));
+  return pages.map((p) => ({ params: { slug: p.id }, props: { entry: p } }));
+}
+interface Props { entry: CollectionEntry<'pages'> }
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<Page title={entry.data.title} description={entry.data.description}>
+  <a slot="before" class="back" href={href('/outreach/')}>Outreach</a>
+  {entry.data.note && <p slot="head" class="lede" set:html={markToComplete(entry.data.note)} />}
+  <div class="prose">
+    <Content />
+  </div>
+</Page>

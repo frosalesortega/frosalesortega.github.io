@@ -1,0 +1,92 @@
+---
+import Page from '../layouts/Page.astro';
+import PublicationItem from '../components/PublicationItem.astro';
+import PubMetrics from '../components/PubMetrics.astro';
+import { site, publications, pubCounts } from '../lib/data';
+
+const years = [...new Set(publications.map((p) => p.year))].sort((a, b) => b - a);
+const byYear = years.map((y) => ({ year: y, items: publications.filter((p) => p.year === y) }));
+const tagCounts = new Map<string, number>();
+publications.forEach((p) => p.tags.forEach((t) => tagCounts.set(t, (tagCounts.get(t) ?? 0) + 1)));
+const tags = [...tagCounts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+const nSelected = publications.filter((p) => p.selected).length;
+const nArticles = pubCounts.articles;
+const nProc = pubCounts.proceedings;
+const nFirst = publications.filter((p) => p.firstAuthor).length;
+const hasStudents = publications.some((p) => p.authorsHtml.includes('student-mark'));
+---
+<Page title="Publications" description={`Publication list of ${site.name}.`}>
+  <div slot="head">
+    <PubMetrics />
+    <p class="count-line" data-static-count>This list shows the {publications.length} entries of my NASA-SciX library ({nArticles} journal articles and {nProc} conference proceedings).</p>
+  </div>
+
+  <div class="tools" data-tools>
+    <label class="sr-only" for="pub-search">Search publications by title, author or journal</label>
+    <input id="pub-search" type="search" placeholder="Search title, author, journal" autocomplete="off" data-q />
+    <ul class="chips" aria-label="Filter publications">
+      <li><button type="button" class="chip" data-filter="all" aria-pressed="true">All ({publications.length})</button></li>
+      {nSelected > 0 && <li><button type="button" class="chip" data-filter="selected" aria-pressed="false">Selected ({nSelected})</button></li>}
+      <li><button type="button" class="chip" data-filter="first" aria-pressed="false">First author ({nFirst})</button></li>
+      {nProc > 0 && <li><button type="button" class="chip" data-filter="type:proceedings" aria-pressed="false">Conference proceedings ({nProc})</button></li>}
+      {tags.map(([t, n]) => <li><button type="button" class="chip" data-filter={`tag:${t}`} aria-pressed="false">{t} ({n})</button></li>)}
+    </ul>
+    <p class="count-line" role="status" aria-live="polite" data-count></p>
+  </div>
+
+  <div data-pubs>
+    {byYear.map(({ year, items }) => (
+      <section class="year-group" data-year-group aria-labelledby={`y-${year}`}>
+        <h2 id={`y-${year}`}>{year}<span class="n">{items.length}</span></h2>
+        <ul class="pub-list">
+          {items.map((p) => <li><PublicationItem pub={p} /></li>)}
+        </ul>
+      </section>
+    ))}
+  </div>
+  <p class="empty-note" data-empty hidden>No publications match the current filters.</p>
+  {hasStudents && <p class="meta" style="margin-top: 1.5rem"><sup>†</sup> Student under (co-)supervision.</p>}
+</Page>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-pubs]');
+  const tools = document.querySelector<HTMLElement>('[data-tools]');
+  if (root && tools) {
+    const items = [...root.querySelectorAll<HTMLElement>('[data-pub]')];
+    const groups = [...root.querySelectorAll<HTMLElement>('[data-year-group]')];
+    const q = tools.querySelector<HTMLInputElement>('[data-q]')!;
+    const chips = [...tools.querySelectorAll<HTMLButtonElement>('[data-filter]')];
+    const count = tools.querySelector<HTMLElement>('[data-count]')!;
+    const empty = document.querySelector<HTMLElement>('[data-empty]')!;
+    let filter = 'all';
+    const total = items.length;
+
+    const match = (el: HTMLElement, term: string) => {
+      if (term && !(el.dataset.search ?? '').includes(term)) return false;
+      if (filter === 'selected') return el.dataset.selected === '1';
+      if (filter === 'first') return el.dataset.first === '1';
+      if (filter.startsWith('type:')) return el.dataset.type === filter.slice(5);
+      if (filter.startsWith('tag:')) return (el.dataset.tags ?? '').split('|').includes(filter.slice(4));
+      return true;
+    };
+    const apply = () => {
+      const term = q.value.trim().toLowerCase();
+      let shown = 0;
+      items.forEach((el) => {
+        const ok = match(el, term);
+        (el.closest('li') as HTMLElement).hidden = !ok;
+        if (ok) shown++;
+      });
+      groups.forEach((g) => { g.hidden = !g.querySelector('li:not([hidden])'); });
+      empty.hidden = shown !== 0;
+      count.textContent = shown === total ? '' : `${shown} of ${total} publications shown`;
+    };
+    chips.forEach((c) => c.addEventListener('click', () => {
+      filter = c.dataset.filter ?? 'all';
+      chips.forEach((x) => x.setAttribute('aria-pressed', String(x === c)));
+      apply();
+    }));
+    q.addEventListener('input', apply);
+    apply();
+  }
+</script>

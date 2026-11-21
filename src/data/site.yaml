@@ -1,0 +1,61 @@
+name: "Fabián Rosales Ortega"
+fullName: "Fernando Fabián Rosales Ortega"
+postnominals: "PhD (Cantab), FRAS"
+role: "Tenured Research Scientist (Investigador Titular C)"
+affiliation: "Instituto Nacional de Astrofísica, Óptica y Electrónica (INAOE), Mexico"
+tagline: "Chemical abundances, ionised gas and integral-field spectroscopy of galaxies"
+shortAffiliation: "INAOE, Mexico"
+# Home page intro (single source of truth; the old About page is gone). [text](/path/) makes an internal link.
+intro: >-
+  I study the ionised gas of star-forming galaxies, its chemical abundances and physical conditions,
+  mainly through integral-field spectroscopy. I also lead astronomical instrumentation projects at INAOE.
+  Outside academia, I co-founded and led a technology start-up and now lead two companies supplying certified solar-eclipse glasses ([entrepreneurship](/cv/#entrepreneurship)).
+  Here you can find a summary of my [research](/research/), my [publications](/publications/) and my [CV](/cv/).
+researchLede: "I work on the ionised gas of galaxies and on astronomical instrumentation."
+# Optional credit for the hero photograph, shown small at the bottom right of the band (leave empty for none).
+heroCredit: ""
+researchStatement: >-
+  I study the ionised interstellar medium of star-forming galaxies: its chemical abundances,
+  its physical conditions, and the role of diffuse ionised gas, mainly through integral-field
+  spectroscopy and the empirical analysis of nebular emission lines. My work is empirical and
+  data-intensive, relying on Python and IDL scientific computing and on data reduction pipelines.
+  I also lead instrumentation projects at INAOE.
+description: "Astrophysicist at INAOE, Mexico. Research on the ionised interstellar medium, chemical abundances and integral-field spectroscopy of galaxies."
+email: "frosales@inaoep.mx"
+phone: "(+52) 222 266 3100 ext. 1305"
+address:
+  - "Instituto Nacional de Astrofísica, Óptica y Electrónica (INAOE)"
+  - "Coordinación de Astrofísica"
+  - "Luis Enrique Erro No. 1, Tonantzintla"
+  - "Puebla, C.P. 72840, México"
+profiles:
+  - id: scholar
+    label: "Google Scholar"
+    url: "https://scholar.google.com/citations?user=wcbgjsYAAAAJ"
+  - id: orcid
+    label: "ORCID"
+    url: "https://orcid.org/0000-0002-3642-9146"
+  - id: scix
+    label: "NASA-SciX"
+    url: "https://scixplorer.org/public-libraries/E2FqHo-CSgSmMytYZWvaXA"
+  - id: github
+    label: "GitHub"
+    url: "https://github.com/frosalesortega"
+  - id: x
+    label: "X"
+    url: "https://x.com/FRosalesO"
+  - id: linkedin
+    label: "LinkedIn"
+    url: "https://www.linkedin.com/in/frosalesortega/"
+nav:
+  - { label: "Research", path: "/research/" }
+  - { label: "Publications", path: "/publications/" }
+  - { label: "News", path: "/news/" }
+  - { label: "Outreach", path: "/outreach/" }
+  - { label: "Science Policy", path: "/science-policy/" }
+  - { label: "CV", path: "/cv/" }
+  - { label: "Contact", path: "/contact/" }
+otherRepos:
+  - name: "inaoe-actas-cpa"
+    url: "https://github.com/frosalesortega/inaoe-actas-cpa"
+    description: "Search platform for the agreements and topics of INAOE's Colegio del Personal Académico (CPA)."

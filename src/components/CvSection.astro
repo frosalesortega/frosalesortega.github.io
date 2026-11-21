@@ -1,0 +1,32 @@
+---
+import type { CvSection } from '../lib/data';
+import { href } from '../lib/url';
+import { markToComplete } from '../lib/html';
+interface Props { section: CvSection; headingId?: boolean }
+const { section, headingId = true } = Astro.props;
+---
+<section class="cv-section" id={headingId ? section.id : undefined} aria-labelledby={`h-${section.id}`}>
+  <h2 id={`h-${section.id}`}>{section.title}</h2>
+  {section.intro && <p set:html={markToComplete(section.intro)} />}
+  <ul class="cv-items">
+    {section.items.map((it) => {
+      const url = it.slug ? href(`/research/${it.slug}/`) : it.url;
+      const external = !it.slug && !!it.url;
+      return (
+        <li class:list={['cv-item', { 'has-label': !!it.label }]}>
+          {it.label && <span class="cv-label">{it.label}</span>}
+          <div>
+            {it.title && (
+              <p class="cv-title">
+                {url
+                  ? <a href={url} rel={external ? 'noopener' : undefined} set:html={markToComplete(it.title)} />
+                  : <Fragment set:html={markToComplete(it.title)} />}
+              </p>
+            )}
+            {it.body && <p class="cv-body" set:html={markToComplete(it.body)} />}
+          </div>
+        </li>
+      );
+    })}
+  </ul>
+</section>
