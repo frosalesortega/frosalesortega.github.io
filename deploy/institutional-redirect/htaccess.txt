@@ -1,0 +1,7 @@
+# Upload to ~frosales/ on calmecac and rename to .htaccess
+# Permanent (301) server-side redirect of the old personal pages to the new site.
+# The PINGS pages and PINGSoft downloads under ~frosales/pings/ are NOT redirected,
+# because the new site links to those files.
+RedirectMatch 301 ^/~frosales/?$ https://frosalesortega.github.io/
+RedirectMatch 301 ^/~frosales/index\.html$ https://frosalesortega.github.io/
+RedirectMatch 301 ^/~frosales/html/.*$ https://frosalesortega.github.io/
