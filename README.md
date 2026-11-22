@@ -34,15 +34,15 @@ npm run build:institutional     # writes dist-inst/ for https://calmecac.inaoep.
 
 Upload the **contents** of `dist-inst/` to the `~frosales` directory on the server. If the server lists directory indexes differently, make sure `index.html` files in sub-folders are served for URLs ending in `/`.
 
-### B. Netlify (recommended main host)
+### B. GitHub Pages (main host)
 
-1. Put this folder in a Git repository (GitHub, GitLab) and choose "Add new site > Import an existing project" in Netlify. `netlify.toml` already sets the build command (`npm run build`), the publish folder (`dist`) and Node 22.
-2. The production address is `https://frosalesortega.github.io/` (GitHub Pages, repository `frosalesortega/frosalesortega.github.io`, published automatically by `.github/workflows/pages.yml` on every push to `main`). Netlify (`https://frosales-ortega.netlify.app/`) can stay as a mirror; its canonical URL also points to GitHub Pages. `SITE_URL` is set in `netlify.toml` (and is the default in `astro.config.mjs`). If the address ever changes, edit it in both places, or override it in Site configuration > Environment variables.
-3. Optional: keep a redirect on the institutional server. Upload `deploy/institutional-redirect/index.html` as `index.html` in `~frosales`; it redirects to `https://frosalesortega.github.io/`.
+The site is published at `https://frosalesortega.github.io/` from the repository `frosalesortega/frosalesortega.github.io` (Settings > Pages > Source: "GitHub Actions"). `.github/workflows/pages.yml` builds and publishes on every push to `main`, with `SITE_BASE=/` (user site served from the root). `SITE_URL` defaults to this address in `astro.config.mjs`; if the address ever changes (for example, a custom domain), edit it there and in the workflow.
 
-### C. GitHub Pages (optional)
+### C. Institutional redirect
 
-Push to GitHub, then Settings > Pages > Source: "GitHub Actions". `.github/workflows/pages.yml` builds on every push to `main`, with `SITE_BASE=/` (user site served from the root).
+`deploy/institutional-redirect/index.html` (upload as `index.html` in `~frosales`) and `deploy/institutional-redirect/htaccess.txt` (upload as `.htaccess`) send the old address `https://calmecac.inaoep.mx/~frosales/` to the new site; the PINGS pages under `~frosales/pings/` are not redirected.
+
+`netlify.toml` is kept only in case the site is ever hosted on Netlify again.
 
 ## 4. Updating content
 
